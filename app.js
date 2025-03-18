@@ -7,11 +7,18 @@ require('dotenv').config();
 //we create a new instance of express as the app object
 const app = express();
 //PORT assignment
-cont PORT = process.env.PORT;
+const PORT = process.env.PORT;
 
 //router handler that will define uri/url that does something
 app.get('/home', (req, res)=>{
     res.send('hello, world');
+});
+
+//router handler that uses post. post creates resources
+
+app.post('/user/:id',(req, res) =>{
+    const user_id = req.params.id;
+    res.send(`The user id is: ${user_id}`);
 });
 
 
