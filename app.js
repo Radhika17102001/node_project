@@ -21,6 +21,10 @@ app.post('/user/:id',(req, res) =>{
     res.send(`The user id is: ${user_id}`);
 });
 
+app.get('/search', (req, res)=>{
+    const query = req.query.q;
+    res.send(`this is the search term entered: ${query}`);
+});
 
 
 //start our server
